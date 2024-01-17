@@ -1,0 +1,21 @@
+
+FROM ubuntu
+MAINTAINER Poonam
+LABEL name=ssh_v
+
+RUN apt update && apt install  openssh-server vim -y
+RUN export username=jaya >> /root/.bashrc
+RUN export password=jaya@123 >> /root/.bashrc
+
+RUN echo PermitRootLogin yes >> /etc/ssh/sshd_config
+RUN echo PasswordAuthentication yes >> /etc/ssh/sshd_config
+Run mkdir /home/$username
+RUN useradd -d /home/$username -s /bin/bash $username
+RUN echo "$username:$password" | chpasswd
+
+EXPOSE 22
+
+ENTRYPOINT service ssh start && bash
+~                                       
+
+
