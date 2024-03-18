@@ -1,3 +1,6 @@
+##to install docker 
+apt install docker.io
+
 # docker
 {
     "version": "3.3",
