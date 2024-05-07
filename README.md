@@ -32,42 +32,41 @@ docker rmi -f  web1 # to delete image
 ## command to push image in aws registry
 ```apt install unzip
 ```
-unzip awscliv2.zip
-./aws/install
+```unzip awscliv2.zip
+```./aws/install
 ls
-sudo rm -rf awscliv2.zip
+```sudo rm -rf awscliv2.zip
 cd aws/
 ls
 cd
 ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
-./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
-aws --version
+```./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
+```aws --version
 cd
 clear
 docker images
-aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k4a2r4u8
-aws configure
-aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k4a2r4u8
-docker tag web public.ecr.aws/k4a2r4u8/images:latest
-docker push public.ecr.aws/k4a2r4u8/images:latest
-docker images
-docker tag ssh_web jaya91/ssh_web
+```aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k4a2r4u8
+```aws configure
+```aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k4a2r4u8
+```docker tag web public.ecr.aws/k4a2r4u8/images:latest
+```docker push public.ecr.aws/k4a2r4u8/images:latest
+```docker images
+```docker tag ssh_web jaya91/ssh_web
+```
 docker push  jaya91/ssh_web
-# docker network
+## docker network
+```
 docker network ls
-docker network create net
-docker network ls
-docker network remove net
-docker network create net --subnet 172.17.0.0/24
-docker network create net --subnet 172.17.1.0/24
-docker network create net --subnet 172.18.1.0/24
-clear
-docker network
-clear
-docker network ls
-docker run -itd --network net --ip 172.18.1.3 jaya91/mysql
-docker ps
-docker inspect 2a | grep IPA
-docker run -itd --network net -p 1111:80  jaya91/project3
+```docker network create net
+```docker network ls
+```docker network remove net
+```docker network create net --subnet 172.17.0.0/24
+```docker network create net --subnet 172.17.1.0/24
+```docker network create net --subnet 172.18.1.0/24
+```docker network
+```docker run -itd --network net --ip 172.18.1.3 jaya91/mysql
+```docker ps
+```docker inspect 2a | grep IPA
+```docker run -itd --network net -p 1111:80  jaya91/project3
 
 
