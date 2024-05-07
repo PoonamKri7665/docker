@@ -1,0 +1,19 @@
+version: '3.3'
+networks:
+  my-net:
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24
+
+services:
+  web:
+    image: jaya91/finalweb
+    ports:
+      - "1111:80"
+    networks:
+    name: my-net
+  db:
+    image: jaya91/mysql
+    networks:
+    name: my-net
+     ipv4_address: 172.18.1.3
