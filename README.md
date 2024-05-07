@@ -1,35 +1,37 @@
 ##to install docker 
 apt install docker.io
 # commands used in docker
-sudo mysql -p   #command to enter in mysql
-docker pull jaya91/mysql   #command to pull image
-docker images   #command to list allthe images
-docker run -itd jaya91/mysql # command to run docker container using image 
-docker inspect 0c | grep IPA  # inpect container and find IP
-mysql -h 172.17.0.2 -u poonam -p
-docker run -itd  -p 80 jaya91/project3
-docker exec -it db bash
-systemctl apache2 status
-apt update
-apt install apache2
-docker ps -a
-docker rm  db 0c
-docker commit 00 web # commmit container to create image
-docker rm -f 00
-docker run  --name mysql -p 3306:3306  -d jaya91/mysql
-docker run -it  --name mysql -p 3306:3306  -d jaya91/mysql
-cd /home/ubuntu
+```sudo mysql -p   #command to enter in mysql
+```docker pull jaya91/mysql   #command to pull image
+```docker images   #command to list allthe images
+```docker run -itd jaya91/mysql # command to run docker container using image 
+```docker inspect 0c | grep IPA  # inpect container and find IP
+```mysql -h 172.17.0.2 -u poonam -p
+```docker run -itd  -p 80 jaya91/project3
+```docker exec -it db bash
+```systemctl apache2 status
+```apt update
+```apt install apache2
+```docker ps -a
+```docker rm  db 0c
+```docker commit 00 web # commmit container to create image
+```docker rm -f 00
+```docker run  --name mysql -p 3306:3306  -d jaya91/mysql
+```docker run -it  --name mysql -p 3306:3306  -d jaya91/mysql
+```cd /home/ubuntu
 cd web
 ls
 docker build -t  web . # here . means present working directory dockerfile
-docker tag web jaya91/web
-docker push  jaya91/web
-docker login
-docker push  jaya91/web
-code . # used to open vscode 
+```docker tag web jaya91/web
+```docker push  jaya91/web
+```docker login
+```docker push  jaya91/web
+```code . # used to open vscode 
+```
 docker rmi -f  web1 # to delete image
-# command to push image in aws registry
-apt install unzip
+## command to push image in aws registry
+```apt install unzip
+```
 unzip awscliv2.zip
 ./aws/install
 ls
