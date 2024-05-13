@@ -1,4 +1,4 @@
-##to install docker 
+## to install docker 
 apt install docker.io
 # commands used in docker
 ```sudo mysql -p   #command to enter in mysql
